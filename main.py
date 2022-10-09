@@ -1,26 +1,8 @@
-
-
-# instructions list - 
-# [
-#     arrive to parking garage
-#     go to shuttle pickup, board shuttle
-#     arrive at terminalx
-#     check bag at ticket Counter
-#     go through security, wait time will be approx x
-#     proceed to gate
-#     board plane, enjoy trip
-# ]
-
-# if not parking
-#     remove list 0
-#     remove list 1
-
-# if not checking
-#     remove list 3
+import wait_time_API
 def getInstructions():
     terminalX = "A" #insert flight info
-    waitTime = "5" #insert getWaitTime script
-    instructionsList = ["arrive to parking garage", "go to shuttle pickup, board shuttle", "arrive at " + terminalX, "check bag at ticket Counter", "go through security, wait time will be approx " + waitTime + " minutes", "proceed to gate", "board plane, enjoy trip"]
+    waitTime = wait_time_API.waitTimeFinder() #insert getWaitTime script
+    instructionsList = ["arrive to parking garage", "go to shuttle pickup, board shuttle", "arrive at " + terminalX, "check bag at ticket Counter", "go through security, wait time will be approx " + str(waitTime) + " minutes", "proceed to gate", "board plane, enjoy trip"]
     parking = True
     checking = True
     if not parking:
