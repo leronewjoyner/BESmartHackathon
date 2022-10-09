@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="static/styles.css">
     <title>Right Place, Right Time</title>
 </head>
 <body>       
     <div class="flex-container">
         <div class="input-card">
-            <img src="american-airlines-logo-png-transparent.png" alt="AA Logo">
+            <img src="static/american-airlines-logo-png-transparent.png" alt="AA Logo">
             <h2>Enter your flight number:</h2>
             <div class="input">
-                <form action="/cgi-bin/main.py" method="get">
+                <form name="passData" action="." method="post">
                     <label for="flightNum">Flight Number: </label>
                     <input type="text" id="flightNum" name="flightNum"><br><br>
                     <p>Are you...</p>
