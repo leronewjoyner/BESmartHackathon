@@ -1,22 +1,19 @@
-from multiprocessing.connection import wait
-from tkinter import W
 import requests
-from datetime import datetime
 import json
 
-def waitTimeFinder():
+def waitTimeFinder(time,code):
 	def getWaitTimes():
-		response = requests.get("https://www.tsawaittimes.com/api/airport/Izu2gTMXZEPT9cvoE2PrOCfxwmFyIgZc/DFW")
+		#api call
+		baseUrl = "https://www.tsawaittimes.com/api/airport/Izu2gTMXZEPT9cvoE2PrOCfxwmFyIgZc/"
+		url = baseUrl + code
+		response = requests.get(url)
 		data = response.json()
 		return data['estimated_hourly_times']
 
-	def getCurrTime():
-		now = datetime.now()
-		current_time = now.strftime("%H:%M:%S")
-		return current_time
-
-	def mapTimeToIndex(raw_time):
-		time = raw_time().strip()
+	def mapTimeToIndex(time):
+		#military time to index in departure time time list within json file
+		#subtracting two hours because end user is supposed to arrive two hours early
+		time = time.strip()
 		hour = int(time[:2])
 		meridian = time[8:]
 		# Special-case '12AM' -> 0, '12PM' -> 12 (not 24)
@@ -24,10 +21,17 @@ def waitTimeFinder():
 			hour = 0
 		if (meridian == 'PM'):
 			hour += 12
-		return hour - 1
+		if hour == 0:
+			return 21
+		elif hour == 1:
+			return 22
+		elif hour == 2:
+			return 23
+		else:
+			return hour - 3
 
 	waitTimes = getWaitTimes()
-	now = mapTimeToIndex(getCurrTime)
-	return waitTimes[now]['waittime']
+	departureTime = mapTimeToIndex(time)
+	return waitTimes[departureTime]['waittime']
 
 

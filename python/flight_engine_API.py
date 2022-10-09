@@ -8,4 +8,3 @@ def getFlightInfo(date,flightnum):
     data = response.json()
     print(data)
 
-getFlightInfo('2022-10-12','3301')

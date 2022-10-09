@@ -1,7 +1,11 @@
-import python.wait_time_API as wait_time_API
+import wait_time_API as wait_time_API
+import flight_engine_API as flight_engine_API
 def getInstructions():
     terminalX = "A" #insert flight info
-    waitTime = wait_time_API.waitTimeFinder() #insert getWaitTime script
+    airportCode = "BWI" #get from user
+    departureTime = "00:18:23AM" #get from user
+    waitTime = wait_time_API.waitTimeFinder(departureTime, airportCode,) #insert getWaitTime script
+    print(waitTime)
     instructionsList = ["arrive to parking garage", "go to shuttle pickup, board shuttle", "arrive at " + terminalX, "check bag at ticket Counter", "go through security, wait time will be approx " + str(waitTime) + " minutes", "proceed to gate", "board plane, enjoy trip"]
     parking = True
     checking = True
@@ -11,6 +15,6 @@ def getInstructions():
     if not checking:
         instructionsList.pop(3)
     return instructionsList
-
-inst = getInstructions()
-print(*inst,sep='\n')
+getInstructions()
+# inst = getInstructions()
+# print(*inst,sep='\n')
