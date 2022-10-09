@@ -3,7 +3,7 @@ import wait_time_API
 import flight_engine_API 
 app = Flask(__name__)
 
-def getInstructions(flightNum, date, arrival, bagCheck):
+def getInstructions(flightNum, date, arrival, bagCheck, boardingPass,):
     terminalX = "A" #insert flight info
     airportCode = "BWI" #get from user
     departureTime = "00:18:23AM" #get from user
@@ -29,6 +29,7 @@ def getFormInfo():
     flightDate = request.form['flightDate']
     arrival = request.form['arrival']
     bagCheck = request.form['bagcheck']
+    boardingPass = request.form['boardingPass']
     instructions = getInstructions(flightNum, flightDate, arrival, bagCheck) 
 
     return render_template('instructions.html', len = len(instructions), instructions = instructions)

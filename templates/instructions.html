@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
     <title>Instructions</title>
 </head>
 <body>
-    <ol>
-        <!-- For loop logic of jinja template -->
-        {%for i in range(0, len)%}
-          
-            <li>{{instructions[i]}}</li>
-        {%endfor%}
-          
-    </ol>
+    <div class="flex-container">
+        <img src="static/american-airlines-logo-png-transparent.png" alt="AA Logo">
+        <div class="steps-list">
+            <h2>Follow these instructions to reach your gate...</h2>
+            <ol class="inst-ol">
+                {%for i in range(0, len)%}
+                
+                    <li class="inst-li">{{instructions[i]}}</li>
+                {%endfor%}
+                
+            </ol>
+        </div>
+        <div class="map-link-holder">
+            
+        </div>
+    </div>
 </body>
 </html>
