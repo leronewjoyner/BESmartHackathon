@@ -22,9 +22,9 @@ def getInstructions(flightNum, date, arrival, bagCheck, boardingPass,):
         instructionsList.pop(0)
         instructionsList.pop(0)
     if bagCheck == "no":
-        instructionsList.remove("check bag at ticket Counter")
+        instructionsList.remove("Check bag at ticket Counter")
     if boardingPass == "yes":
-        instructionsList.remove("get your boarding pass at the self-service kiosk")
+        instructionsList.remove("Get your boarding pass via self-service kiosk")
     return instructionsList
 
 

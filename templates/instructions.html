@@ -14,14 +14,11 @@
             <h2>Follow these instructions to reach your gate...</h2>
             <ol class="inst-ol">
                 {%for i in range(0, len)%}
-                
-                    <li class="inst-li">{{instructions[i]}}</li>
-                {%endfor%}
-                
+                    <div class="step">
+                        <li class="inst-li">{{instructions[i]}}</li>
+                    </div>
+                {%endfor%}               
             </ol>
-        </div>
-        <div class="map-link-holder">
-            
         </div>
     </div>
 </body>
