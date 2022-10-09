@@ -1,4 +1,4 @@
-import wait_time_API
+import python.wait_time_API as wait_time_API
 def getInstructions():
     terminalX = "A" #insert flight info
     waitTime = wait_time_API.waitTimeFinder() #insert getWaitTime script
