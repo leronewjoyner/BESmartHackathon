@@ -1,5 +1,5 @@
-import wait_time_API as wait_time_API
-import flight_engine_API as flight_engine_API
+import wait_time_API 
+import flight_engine_API 
 from flask import Flask, render_template, request
 
 

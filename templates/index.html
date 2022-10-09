@@ -15,15 +15,20 @@
             <div class="input">
                 <form name="passData" action="." method="post">
                     <label for="flightNum">Flight Number: </label>
-                    <input type="text" id="flightNum" name="flightNum"><br><br>
+                    <input type="text" id="flightNum" name="flightNum"><br>
+                    <label for="Date">Date:</label>
+                    <input type="date" id="flightDate" name="flightDate">
+
                     <p>Are you...</p>
-                    <input type="radio" id="parking" name="parking" value="parking">
+                    <input type="radio" id="parking" name="arrival" value="parking">
                     <label for="parking">parking at the airport</label><br>
-                    <input type="radio" id="dropoff" name="dropoff" value="dropOff">
+                    <input type="radio" id="dropoff" name="arrival" value="dropOff">
                     <label for="dropOff">being dropped off</label><br> 
                     <p>Are you checking bags?</p>
-                    <input type="radio" id="yes" name="yes" value="yes">
+                    <input type="radio" id="yes" name="bagcheck" value="yes">
                     <label for="yes">Yes</label><br>
+                    <input type="radio" id="no" name="bagcheck" value="no">
+                    <label for="no">no</label><br>
                     <input type="submit" value="Submit">
                   </form>
             </div>
