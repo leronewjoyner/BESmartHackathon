@@ -13,8 +13,10 @@ def getInstructions(flightNum, date, arrival, bagCheck, boardingPass,):
     departureTime = new_flight_engine.getDepart(str(date),str(flightNum))
     departHour = departureTime[0:2]
     #waitTime = wait_time_API(int(departHour),airportCode)
-   # waitTime = wait_time_API.waitTimeFinder(departureTime, airportCode,) #insert getWaitTime script
-    instructionsList = ["arrive to parking garage", "go to shuttle pickup, board shuttle", "arrive at terminal " + terminalX, "get your boarding pass at the self-service kiosk" ,"check bag at ticket Counter", "go through security", "proceed to gate", "board plane, enjoy trip"]
+    waitTime = wait_time_API.waitTimeFinder(int(departHour), airportCode,) #insert getWaitTime script
+    instructionsList = ["Arrive and park at parking garage", "Walk to shuttle pickup, board shuttle","Arrive at terminal " + terminalX, 
+    "Get your boarding pass via self-service kiosk" ,"Check bag at ticket Counter", "Go through security, wait time will be approximately " + str(waitTime) + 
+    " minutes", "Proceed to gate", "Board plane, enjoy your trip!"]
 
     if arrival == "dropOff":
         instructionsList.pop(0)
